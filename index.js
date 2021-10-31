@@ -135,7 +135,7 @@ bot.on("message", async message => {
         message.channel.send(MemeEmbed)
     }
     
-    if(cmd === `${prefix}szerverinfo`){
+    if(cmd === `-szerverinfo`){
     
         const { guild } = message
         const icon = message.guild.iconURL()
