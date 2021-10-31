@@ -135,7 +135,7 @@ bot.on("message", async message => {
         message.channel.send(MemeEmbed)
     }
     
-    if(cmd === `${prefix}serverinfo`){
+    if(cmd === `${prefix}szerverinfo`){
     
         const { guild } = message
         const icon = message.guild.iconURL()
@@ -158,9 +158,6 @@ bot.on("message", async message => {
         .addField('Emojik:-', `${emojis}`, true) 
         .addField('Szerver Stat:-', `${guild.channels.cache.filter(channel => channel.type == 'text').size}⌨️\n${guild.channels.cache.filter(channel => channel.type == 'voice').size}🔈\n${guild.channels.cache.filter(channel => channel.type == 'news').size}📢\n${guild.channels.cache.filter(channel => channel.type == 'category').size}📁`)
         .setFooter('Szerver Info', icon)
- 
- 
-        
         message.channel.send(szerveriEmbed)
         
     }
@@ -169,6 +166,26 @@ bot.on("message", async message => {
     if (cmd == `${prefix}Ping`) {
         message.channel.send(`Gamerharcos bot pingje a következő : **${bot.ws.ping}ms**`)
     }
+    
+    
+        if (cmd === `${prefix}help`) {
+        let hölp = new Discord.RichEmbed()
+            .setTitle("HELP")
+            .setColor("#ff0000")
+            .addField(`${prefix}bitcoin`, "Kihozza az árfolyamot")
+            .addField(`${prefix}Számolj`, "Kiszámolj")
+            .addField(`${prefix}Ping`, "A bot pingje")
+            .addField(`${prefix}meme`, "meme parancs")
+            .addField(`${prefix}report`, "report")
+            .addField(`Moderálás`, "A káromkodást kicenzúrázza")
+            .setTimestamp(message.createdAt)
+            .setFooter(`${name}`);
+
+        message.channel.send(hölp);
+    }
+    
+    
+    
 })
 
 
