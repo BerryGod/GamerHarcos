@@ -122,7 +122,7 @@ bot.on("message", async message => {
         }
     }
     if (cmd === `${prefix}meme`) {
-        const subreddits = ["memes", "MagyarMemek"]
+        const subreddits = ["memes", "FostTalicska"]
         const random = subreddits[Math.floor(Math.random() * subreddits.length)]
 
         const IMG = await randomPuppy(random)
