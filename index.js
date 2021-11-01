@@ -135,32 +135,7 @@ bot.on("message", async message => {
         message.channel.send(MemeEmbed)
     }
     
-    if(cmd === `-szerverinfo`){
-    
-        const { guild } = message
-        const icon = message.guild.iconURL()
-        const roles = message.guild.roles.cache.map(e => e.toString())
-        const emojis = message.guild.emojis.cache.map(e =>  e.toString())
-        const emojicount = message.guild.emojis.cache 
-        const members = message.guild.members.cache
-        const create = message.guild.createdAt.toLocaleDateString()
-    
-        const szerveriEmbed = new Discord.MessageEmbed()
-        .setColor('RANDOM')
-        .setTitle('Szerver Info')
-        .setThumbnail(`${icon}`)
-        .addField('Szerver tulaj:-', guild.owner)
-        .addField('Szerver ID:-', guild.id)
-        .addField('server létrehozása:-', create)
-        .addField('Boosts:-', guild.premiumSubscriptionCount)
-        .addField('Boost Level:-', guild.premiumTier)
-        .addField('Emojis számláló:-', `${emojicount.size}\n${emojicount.filter(emoji => !emoji.animated).size}(Non Animated)\n${emojicount.filter(emoji => emoji.animated).size}(Animated)`)
-        .addField('Emojik:-', `${emojis}`, true) 
-        .addField('Szerver Stat:-', `${guild.channels.cache.filter(channel => channel.type == 'text').size}⌨️\n${guild.channels.cache.filter(channel => channel.type == 'voice').size}🔈\n${guild.channels.cache.filter(channel => channel.type == 'news').size}📢\n${guild.channels.cache.filter(channel => channel.type == 'category').size}📁`)
-        .setFooter('Szerver Info', icon)
-        message.channel.send(szerveriEmbed)
-        
-    }
+
 
 
     if (cmd == `${prefix}Ping`) {
@@ -168,21 +143,7 @@ bot.on("message", async message => {
     }
     
     
-        if (cmd === `${prefix}help`) {
-        let hölp = new Discord.RichEmbed()
-            .setTitle("HELP")
-            .setColor("#ff0000")
-            .addField(`${prefix}bitcoin`, "Kihozza az árfolyamot")
-            .addField(`${prefix}Számolj`, "Kiszámolj")
-            .addField(`${prefix}Ping`, "A bot pingje")
-            .addField(`${prefix}meme`, "meme parancs")
-            .addField(`${prefix}report`, "report")
-            .addField(`Moderálás`, "A káromkodást kicenzúrázza")
-            .setTimestamp(message.createdAt)
-            .setFooter(`${name}`);
-
-        message.channel.send(hölp);
-    }
+  
     
     
     
