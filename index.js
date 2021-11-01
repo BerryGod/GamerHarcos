@@ -5,6 +5,45 @@ const badwords = ["kurva", "anyád", "buzi", "geci", "Kurva", "Anyád", "Buzi", 
 const superagent = require('superagent');
 const randomPuppy = require('random-puppy');
 
+const fs = require("fs");
+const ms = require("ms");
+
+
+
+//////////////////////////////////////////////////////////
+bot.commands = new Discord.Collection();
+bot.aliases = new Discord.Collection();
+
+bot.categories = fs.readdirSync("./commands/");
+
+["command"].forEach(handler => {
+    require(`./handlers/${handler}`)(bot)
+});
+
+bot.on("message", async message => {
+    let prefix = botconfig.prefix;
+
+    if (message.author.bot) return;
+    if (!message.guild) return;
+    if (!message.content.startsWith(prefix)) return;
+    if (!message.member) message.member = await message.guild.fetchMember(message)
+
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const cmd = args.shift().toLowerCase();
+
+    if (cmd.length === 0) return;
+
+    let command = bot.commands.get(cmd);
+    if (!command) command = bot.commands.get(bot.aliases.get(cmd));
+
+    if (command)
+        command.run(bot, message, args);
+});
+
+//////////////////////////////////////////////////////////
+
+
+
 
 bot.on("ready", async() => {
     console.log(`${bot.user.username} elindult!`)
@@ -27,12 +66,11 @@ bot.on("message", async message => {
     let cmd = MessageArray[0];
     let args = MessageArray.slice(1);
     let prefix = botconfig.prefix;
-
+//////////////////////////////////////////////////////////
     if (cmd === `${prefix}hello`) {
         message.channel.send("Szia");
     }
-
-
+//////////////////////////////////////////////////////////
     for (let i = 0; i < badwords.length; i++) {
         if (cmd == badwords[i]) {
             message.delete()
@@ -40,10 +78,7 @@ bot.on("message", async message => {
         }
         i++
     }
-
-
-
-
+/////////////////////////////////////////////////////////
     if (cmd === "-report") {
         // privát szűrése
         if (message.channel.type === 'dm') return message.reply("Itt nem tudod használni!");
@@ -74,9 +109,7 @@ bot.on("message", async message => {
             // majd küldés
         bot.channels.cache.get(channel_id).send(embed)
     }
-
-
-
+//////////////////////////////////////////////////////////
     if (message.content.startsWith('-bitcoin')) {
         const CoinGecko = require('coingecko-api');
         const CoinGeckoClient = new CoinGecko();
@@ -92,11 +125,9 @@ bot.on("message", async message => {
             .addField("Bitcoin ennyit ér: " + data.data.bitcoin.huf + " HUF ")
             .addField("Bitcoin ennyit ér: " + data.data.bitcoin.usd + " USD ")
             .setThumbnail("https://m.blog.hu/ma/malkav/image/best_of_troll_2.jpg")
-
         message.channel.send(btcEmbed);
-
     }
-
+//////////////////////////////////////////////////////////
     if (cmd === `${prefix}Számolj`) {
 
         var plus = Math.floor(Number(args[0]) + Number(args[2]));
@@ -121,6 +152,7 @@ bot.on("message", async message => {
             message.channel.send("``Baszd fejbe magad``");
         }
     }
+//////////////////////////////////////////////////////////
     if (cmd === `${prefix}meme`) {
         const subreddits = ["memes", "FostTalicska"]
         const random = subreddits[Math.floor(Math.random() * subreddits.length)]
@@ -134,20 +166,15 @@ bot.on("message", async message => {
 
         message.channel.send(MemeEmbed)
     }
-    
+//////////////////////////////////////////////////////////
 
 
 
     if (cmd == `${prefix}Ping`) {
         message.channel.send(`Gamerharcos bot pingje a következő : **${bot.ws.ping}ms**`)
     }
-    
-    
-  
-    
-    
-    
-    
+//////////////////////////////////////////////////////////
+
     if(cmd === `${prefix}giveaway`){
             const messageArray = message.content.split(" ");
             if(!message.member.hasPermission("KICK_MEMBERS" || "BAN_MEMBERS")) return message.channel.send("Ehhez a parancshoz nincs jogod!")
@@ -202,15 +229,7 @@ bot.on("message", async message => {
             }
         }, ms(idő))
         }
-    
-    
-    
+//////////////////////////////////////////////////////////
 })
-
-
-
-
-
-
 
 bot.login(process.env.BOT_TOKEN);
