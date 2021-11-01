@@ -8,7 +8,7 @@ const { MessageEmbed } = require('discord.js')
 
 const fs = require("fs");
 const ms = require("ms");
-const ascii = require("ascii-table");
+
 ///////////////////////////////////////////
 
 
