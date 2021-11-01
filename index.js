@@ -8,10 +8,7 @@ const { MessageEmbed } = require('discord.js')
 
 const fs = require("fs");
 const ms = require("ms");
-
-
-
-//////////////////////////////////////////////////////////
+///////////////////////////////////////////
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
