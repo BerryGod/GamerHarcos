@@ -174,6 +174,7 @@ if(cmd === `${prefix}giveaway`){
         var embedSend = await message.channel.send(Gembed);
         embedSend.react("🎉");
  
+        message.delete
         setTimeout(async() => {
             try{
                 const peopleReactedBOT =  await embedSend.reactions.cache.get("🎉").users.fetch();
