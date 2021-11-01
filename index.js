@@ -168,7 +168,7 @@ if(cmd === `${prefix}giveaway`){
         var Gembed = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setTitle("Nyereményjáték!!!!")
-        .setDescription(`**${tárgy}**`)
+        .setDescription(`Nyeremény: **${tárgy}**`)
         .addField("`Időtartam:`", ms(ms(idő), {long: true}), true)
         .setFooter("A jelentkezéshe reagálj ezzel: 🎉")
         var embedSend = await message.channel.send(Gembed);
