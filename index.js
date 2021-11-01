@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const botconfig = require("./botconfig.json");
 const bot = new Discord.Client({ disableEveryone: true });
-const badwords = ["kurva", "anyád", "buzi", "geci", "Kurva", "Anyád", "Buzi", "Geci"]
+const badwords = ["kurva", "anyád", "buzi", "geci", "Kurva", "Anyád", "Buzi", "Geci", "geci"]
 const superagent = require('superagent');
 const randomPuppy = require('random-puppy');
 
