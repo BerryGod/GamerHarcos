@@ -4,6 +4,7 @@ const bot = new Discord.Client({ disableEveryone: true });
 const badwords = ["kurva", "anyád", "buzi", "geci", "Kurva", "Anyád", "Buzi", "Geci", "geci", "Geci", "anyád", "Anyád"]
 const superagent = require('superagent');
 const randomPuppy = require('random-puppy');
+const { MessageEmbed } = require('discord.js')
 
 const fs = require("fs");
 const ms = require("ms");
