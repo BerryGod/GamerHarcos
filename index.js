@@ -8,6 +8,7 @@ const { MessageEmbed } = require('discord.js')
 
 const fs = require("fs");
 const ms = require("ms");
+const ascii = require("ascii-table");
 ///////////////////////////////////////////
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
