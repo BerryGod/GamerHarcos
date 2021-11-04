@@ -44,7 +44,7 @@ bot.on("message", async message => {
     }
 //////////////////////////////////////////////////////////
 const {badwords } = require("./badwords.json")
-    if(!message.member.hasPermission("ADMINISTRATOR")){
+    if(message.member.hasPermission("ADMINISTRATOR")){
         let confirm = false;
         
         let i;
