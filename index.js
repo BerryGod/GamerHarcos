@@ -29,7 +29,10 @@ bot.on("ready", async() => {
     setInterval(function() {
         let status = státuszok[Math.floor(Math.random() * státuszok.length)]
 
-        bot.user.setActivity(status, { type: "STREAMING" })
+        client.user.setActivity(status, {
+            type: "STREAMING",
+            url: "https://www.youtube.com/channel/UCVhMAtLeOq2ZVVwuZAm4P2A"
+        })
     }, 3000)
 })
 
