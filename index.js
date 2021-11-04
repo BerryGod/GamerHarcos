@@ -43,7 +43,7 @@ bot.on("message", async message => {
         message.channel.send("Szia");
     }
 //////////////////////////////////////////////////////////
-const {badwords } = require("./badwords.json")
+const { badwords } = require("./badwords.json")
     if(message.member.hasPermission("ADMINISTRATOR")){
         let confirm = false;
         
