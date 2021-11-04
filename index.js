@@ -262,6 +262,28 @@ if(cmd === `${prefix}ban`) {
         }
     }
     
+    
+    
+    if(cmd === `${prefix}cat`) {
+        let msg = await message.channel.send("Generálás...") 
+
+        let {body} = await superagent
+        .get(`http://aws.random.cat/meow`)
+//console.log(body.file) 
+        if(!{body}) return message.channel.send("Nem sikerült a kép legenerálása!")
+
+        let cEmbed = new Discord.MessageEmbed()
+        .setColor("#ff0000")
+        .setAuthor('Catty', message.guild.iconURL())
+        .setImage(body.file)
+        .setTimestamp()
+        .setFooter('By: BerryGod')
+
+        message.channel.send(cEmbed)
+
+        message.delete();
+    }
+    
 //////////////////////////////////////////////////////////
 })
 
