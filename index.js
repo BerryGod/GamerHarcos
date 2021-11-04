@@ -284,44 +284,7 @@ if(cmd === `${prefix}ban`) {
         message.delete();
     }
     
-            if(cmd === `${prefix}botinfo`) {
-                const botEmbedi = new MessageEmbed()
-                .setThumbnail(client.user.displayAvatarURL())
-                .setTitle('Bot statisztikái')
-                .setColor('#000000')
-                .addFields(
-                    {
-                        name: '🌐 Szerverek',
-                        value: `${client.guilds.cache.size} Szerveren`,
-                        inline: true,
-                    },
-                    {
-                        name: '📺 Szobák',
-                        value: `Összesen ${client.channels.cache.size} szobán van.`,
-                        inline: true,
-                    },
-                    {
-                        name: '👥 Szerver tagok',
-                        value: `A szervereken ${client.users.cache.size} tag van.`,
-                        inline: true,
-                    },
-                    {
-                        name: '⏳ Ping',
-                        value: `${Math.round(client.ws.ping)}ms`,
-                        inline: true,
-                    },
-                    {
-                        name: 'Csatlakozás',
-                        value: client.user.createdAt,
-                        inline: true,
-                    },
-                )
-                .setFooter(`${message.author.tag}`, message.author.displayAvatarURL());
 
-            return message.channel.send(botEmbedi);
-            },
-       };
-       }
     
     
     
