@@ -43,22 +43,21 @@ bot.on("message", async message => {
         message.channel.send("Szia");
     }
 //////////////////////////////////////////////////////////
-const { badwords } = require("./badwords.json")
-    if(message.member.hasPermission("ADMINISTRATOR")){
-        let confirm = false;
-        
-        let i;
-        for(i = 0; i < badwords,length; i++){
-            if(message.content.toLowerCase().includes(badwords[i].toLowerCase())){
+const badwords = ["buzi", "geci", "szar", "berryshit"]
+        if(message.member.hasPermission("ADMINISTRATOR")){
+            let confirm = false
+
+            let i;
+            for(i = 0; i < badwords.length; i++){
+             if(message.content.toLowerCase().includes(badwords[i].toLowerCase())){
                 confirm = true
+                }
             }
-        }
-        
-        if(confirm) {
-            message.delete
-            return message.channel.send("Ne káromkodj")
-        } 
-    }
+            if(confirm){
+                message.delete()
+                return message.channel.send("Ne káromkodj")
+            }
+    }  
         
 /////////////////////////////////////////////////////////
     if (cmd === "-report") {
