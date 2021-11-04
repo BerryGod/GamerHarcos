@@ -45,6 +45,7 @@ bot.on("message", async message => {
 //////////////////////////////////////////////////////////
     for (let i = 0; i < badwords.length; i++) {
         if (cmd == badwords[i]) {
+            if (message.member.permissions.has('ADMINISTRATOR')) return
             message.delete()
             message.reply("Ne káromkodj!");
         }
