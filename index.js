@@ -31,7 +31,7 @@ bot.on("ready", async() => {
 
         client.user.setActivity(status, {
             type: "STREAMING",
-            url: "https://www.twitch.tv/pingvin_harcos"
+            url: "https://www.twitch.tv/berrygodtwich"
         })
     }, 3000)
 })
