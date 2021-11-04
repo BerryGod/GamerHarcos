@@ -57,7 +57,7 @@ bot.on("message", async message => {
         // felhasználó lekérése
         const report_usr = message.mentions.users.first();
         // csatorna id az egyszerűség kedvéért
-        const channel_id = "904059507301285908";
+        const channel_id = "905880799088345178";
         // 6 + 24 mivel prefix levágva = 30
         const indok = message.content.slice(30);
 
