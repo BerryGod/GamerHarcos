@@ -274,7 +274,7 @@ if(cmd === `${prefix}ban`) {
 
         let cEmbed = new Discord.MessageEmbed()
         .setColor("#ff0000")
-        .setAuthor('Catty', message.guild.iconURL())
+        .setAuthor('CUKI MACSKA RIADÓ!', message.guild.iconURL())
         .setImage(body.file)
         .setTimestamp()
         .setFooter('By: BerryGod')
