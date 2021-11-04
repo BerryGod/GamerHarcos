@@ -206,7 +206,7 @@ if(cmd === `${prefix}giveaway`){
         .setDescription("Prefix: -")
         .setColor("RANDOM")
         .addField("-help", "Help command")
-        message.channel.send(embed)
+    message.channel.send(embed)
     }
     
     
