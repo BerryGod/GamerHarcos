@@ -4,11 +4,11 @@ const bot = new Discord.Client({ disableEveryone: true });
 
 const superagent = require('superagent');
 const randomPuppy = require('random-puppy');
-const { MessageEmbed } = require('discord.js')
+const { MessageEmbed } = require('discord.js');
 
 const fs = require("fs");
 const ms = require("ms");
-
+const os = require('os');
 ///////////////////////////////////////////
 
 
@@ -283,6 +283,10 @@ if(cmd === `${prefix}ban`) {
 
         message.delete();
     }
+    
+    
+    
+    
     
 //////////////////////////////////////////////////////////
 })
