@@ -100,7 +100,7 @@ bot.on("message", async message => {
         message.channel.send(btcEmbed);
     }
 //////////////////////////////////////////////////////////
-    if (cmd === `${prefix}Számolj`) {
+    if (cmd === `${prefix}számolj`) {
 
         var plus = Math.floor(Number(args[0]) + Number(args[2]));
         if (isNaN(plus)) return message.channel.send("``Hiba: Kérlek adj meg számokat!``");
@@ -139,7 +139,7 @@ bot.on("message", async message => {
         message.channel.send(MemeEmbed)
     }
 //////////////////////////////////////////////////////////
-    if (cmd == `${prefix}Ping`) {
+    if (cmd == `${prefix}ping`) {
         message.channel.send(`Gamerharcos bot pingje a következő : **${bot.ws.ping}ms**`)
     }
 //////////////////////////////////////////////////////////
@@ -208,6 +208,10 @@ if(cmd === `${prefix}giveaway`){
         .addField("-help", "Help command")
         .addField("-bitcoin", "A bitcoin árfolyamát kiírja")
         .addField("-giveaway     giveaway command", "Használat: -giveaway 100s Tárgy")
+        .addField("-ping", "A bot pingje")
+        .addField("-számolj", "A bot kiszámolja a matek feladványt    Használat: 3 + 3")
+        .addField("-meme", "meme parancs (néha buggos)")
+        .addField("-report", "Reportol egy embert amit csak az adminok látnak Használat: -report @egyember indok")
     message.channel.send(embed)
     }
     
