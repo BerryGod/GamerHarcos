@@ -199,6 +199,17 @@ if(cmd === `${prefix}giveaway`){
         }, ms(idő))
         }
 
+    
+    if(message.content === "!help") {
+        let embed = new MessageEmbed()
+        .setTitle("Command List")
+        .setDescription("!help")
+        .setColor("RANDOM")
+        message.channel.send(embed)
+    }
+    
+    
+    
 //////////////////////////////////////////////////////////
 })
 
