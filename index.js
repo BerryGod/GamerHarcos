@@ -203,10 +203,9 @@ if(cmd === `${prefix}giveaway`){
     if(message.content === "-help") {
         let embed = new MessageEmbed()
         .setTitle("Parancsok:")
-        .setURL('https://discord.gg/BMnQxqwG8K')
         .setDescription("Prefix: -")
         .setThumbnail('https://upload.wikimedia.org/wikipedia/commons/9/96/The_Help_logo.png')
-        .addField('-help', 'help command' true)
+        .addField('-help     A help command')
         .setColor("RANDOM")
         message.channel.send(embed)
     }
