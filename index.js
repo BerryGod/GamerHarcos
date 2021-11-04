@@ -20,19 +20,17 @@ const os = require('os');
 bot.on("ready", async() => {
     console.log(`${bot.user.username} elindult!`)
 
-    let statuses = [
-        `-help`,
-        `GamerHarcos bot`,
-        `Sub to BerryGod`,
+    let státuszok = [
+        "Prefix: -",
+        "-help",
+        "By: BerryGod"
     ]
 
-    setInterval(function () {
-        let status = statuses[Math.floor(Math.random() * statuses.length)];
-        client.user.setActivity(status, {
-            type: "STREAMING",
-            url: "https://www.twitch.tv/ATWITCHNEVED"
-        })
-    }, 4000)
+    setInterval(function() {
+        let status = státuszok[Math.floor(Math.random()* státuszok.length)]
+
+        bot.user.setActivity(status, {type: "WATCHING"})
+    }, 3000)
 })
 
 bot.on("message", async message => {
