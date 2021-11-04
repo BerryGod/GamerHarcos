@@ -205,7 +205,7 @@ if(cmd === `${prefix}giveaway`){
         .setTitle("Help!")
         .setDescription("Prefix: -")
         .setColor("RANDOM")
-        .addField("-Help     Help command")
+        .addField("-help     Help command")
         .addField("-bitcoin     A bitcoin árfolyamát kiírja")
         .addField("-giveaway     giveaway command", "Használat: -giveaway 100s Tárgy")
     message.channel.send(embed)
