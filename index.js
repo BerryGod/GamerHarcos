@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const botconfig = require("./botconfig.json");
 const bot = new Discord.Client({ disableEveryone: true });
-const {badwords } = require("./badwords.json")
+
 const superagent = require('superagent');
 const randomPuppy = require('random-puppy');
 const { MessageEmbed } = require('discord.js')
@@ -43,14 +43,23 @@ bot.on("message", async message => {
         message.channel.send("Szia");
     }
 //////////////////////////////////////////////////////////
-    for (let i = 0; i < badwords.length; i++) {
-        if (cmd == badwords[i]) {
-            if (message.member.permissions.has('ADMINISTRATOR')) return
-            message.delete()
-            message.reply("Ne káromkodj!");
+const {badwords } = require("./badwords.json")
+    if(!message.member.hasPermission("ADMINISTRATOR")){
+        let confirm = false;
+        
+        let i;
+        for(i = 0; i < badwords,length; i++){
+            if(message.content.toLowerCase().includes(badwords[i].toLowerCase())){
+                confirm = true
+            }
         }
-        i++
+        
+        if(confirm) {
+            message.delete
+            return message.channel.send("Ne káromkodj")
+        } 
     }
+        
 /////////////////////////////////////////////////////////
     if (cmd === "-report") {
         // privát szűrése
