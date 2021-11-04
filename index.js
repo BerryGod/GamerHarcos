@@ -264,7 +264,7 @@ if(cmd === `${prefix}ban`) {
     
     
     
-    if(cmd === `${prefix}cat`) {
+    if(cmd === `${prefix}cica`) {
         let msg = await message.channel.send("Generálás...") 
 
         let {body} = await superagent
