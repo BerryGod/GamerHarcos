@@ -285,6 +285,7 @@ if(cmd === `${prefix}ban`) {
     }
     
             if(cmd === `${prefix}botinfo`) {
+                const botEmbedi = new MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL())
                 .setTitle('Bot statisztikái')
                 .setColor('#000000')
@@ -317,7 +318,7 @@ if(cmd === `${prefix}ban`) {
                 )
                 .setFooter(`${message.author.tag}`, message.author.displayAvatarURL());
 
-            return message.channel.send(embed);
+            return message.channel.send(botEmbedi);
             },
        };
        }
