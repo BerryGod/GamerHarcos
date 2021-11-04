@@ -31,7 +31,7 @@ bot.on("ready", async() => {
 
         client.user.setActivity(status, {
             type: "STREAMING",
-            url: "https://www.youtube.com/channel/UCVhMAtLeOq2ZVVwuZAm4P2A"
+            url: "https://www.twitch.tv/pingvin_harcos"
         })
     }, 3000)
 })
