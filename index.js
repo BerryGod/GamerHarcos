@@ -498,6 +498,6 @@ if(cmd === `${prefix}giveaway`){
     
     
 //////////////////////////////////////////////////////////
-)
+
 
 bot.login(process.env.BOT_TOKEN);
