@@ -346,6 +346,34 @@ if(cmd === `${prefix}giveaway`){
     
     
     
+    if(cmd === `${prefix}removerole`) {
+        if (!message.member.permissions.has('KICK_MEMBERS')) return;
+        
+
+        const member = message.mentions.members.first();
+        if(!member) return message.reply("Jelölj meg egy embert! :1706notcheck~2:");
+
+        if(message.member.roles.highest.position <= 
+            member.roles.highest.position
+            )
+
+            return message.reply(
+                "Az illető magasabb rangú mint te! :1706notcheck~2:"
+            );
+
+            const reason = args.slice(1).join(" ") || "Nincs indok csatolva."
+
+            member.kick({ reason });
+            let kickEmbed = new Discord.MessageEmbed()
+            .setColor("#ff1800")
+            .setAuthor(`Kickelve lett: ${member} Indok: ${reason} Általa: ${message.author.username} :1496check:`)
+
+            message.channel.send(kickEmbed);
+        }
+    }
+    
+    
+    
     
     
 //////////////////////////////////////////////////////////
