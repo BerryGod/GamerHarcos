@@ -10,32 +10,7 @@ const fs = require("fs");
 const ms = require("ms");
 const os = require('os');
 
-const mineflayer = require('mineflayer')
-const cmd = require('mineflayer-cmd').plugin
 
-let rawdata = fs.readFileSync('config.json');
-let data = JSON.parse(rawdata);
-var lasttime = -1;
-var moving = 0;
-var connected = 0;
-var actions = [ 'forward', 'back', 'left', 'right']
-var lastaction;
-var pi = 3.14159;
-var moveinterval = 2; // 2 second movement interval
-var maxrandom = 5; // 0-5 seconds added to movement interval (randomly)
-var host = data["ip"];
-var username = data["name"]
-var nightskip = data["auto-night-skip"]
-var bota = mineflayer.createBot({
-  host: host,
-  username: username
-});
-function getRandomArbitrary(min, max) {
-       return Math.random() * (max - min) + min;
-
-}
-
-bot.loadPlugin(cmd)
 
 
 
@@ -408,48 +383,7 @@ if(cmd === `${prefix}giveaway`){
     
     
     
-        bota.on('time', function(time) {
-	    if(nightskip == "true"){
-	    if(bota.time.timeOfDay >= 13000){
-	    bota.chat('/time set day')
-	    }}
-        if (connected <1) {
-            return;
-        }
-        if (lasttime<0) {
-            lasttime = bota.time.age;
-        } else {
-            var randomadd = Math.random() * maxrandom * 20;
-            var interval = moveinterval*20 + randomadd;
-            if (bota.time.age - lasttime > interval) {
-                if (moving == 1) {
-                    bota.setControlState(lastaction,false);
-                    moving = 0;
-                    lasttime = bot.time.age;
-                } else {
-                    var yaw = Math.random()*pi - (0.5*pi);
-                    var pitch = Math.random()*pi - (0.5*pi);
-                    bota.look(yaw,pitch,false);
-                    lastaction = actions[Math.floor(Math.random() * actions.length)];
-                    bota.setControlState(lastaction,true);
-                    moving = 1;
-                    lasttime = bot.time.age;
-                    bota.activateItem();
-                }
-            }
-        }
-    });
 
-    bota.on('spawn',function() {
-        connected=1;
-    });
-
-    bota.on('death',function() {
-        bota.emit("respawn")
-    });
-    
-    
-  
     
     
     
