@@ -246,6 +246,7 @@ if(cmd === `${prefix}giveaway`){
         .addField("-clear", "clear parancs Használat: -clear (mennyi üzenetet szeretnél törölni)")
         .addField("-addrole", "")
         .addField("-removerole", "Egy cuki cicál generál")
+        .addField("-kitagadunk", "Egy kick parancs csak ez kitagad az oláh cigányok közül!")
         
         
     message.channel.send(embed)
