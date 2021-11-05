@@ -269,7 +269,7 @@ if(cmd === `${prefix}giveaway`){
 
         let {body} = await superagent
         .get(`http://aws.random.cat/meow`)
-//console.log(body.file) 
+         
         if(!{body}) return message.channel.send("Nem sikerült a kép legenerálása!")
 
         let cEmbed = new Discord.MessageEmbed()
@@ -306,7 +306,7 @@ if(cmd === `${prefix}giveaway`){
         const embed = new Discord.MessageEmbed()
         
         .setColor("#ff1800")
-        .setDescription(` ${target.user.username}-nek/nak oda lett adva: ${arole} nevű rang! :1496check:`)
+        .setDescription(` ${target.user.username}-nek/nak oda lett adva: ${arole} nevű rang! `)
         
         await message.channel.send(embed)
         
