@@ -314,7 +314,33 @@ if(cmd === `${prefix}giveaway`){
     }
 
        
-    
+     if(cmd === `${prefix}addrole`) {
+        if (!message.member.permissions.has("MANAGE_ROLES")) {
+        return message.channel.send("nincs jogod szerkeszteni a rangokat!");
+      }
+      if (!message.guild.me.permissions.has("MANAGE_ROLES")) {
+        return message.channel.send("Nincs jogom:");
+      } 
+      let target = message.mentions.members.first();
+      
+      if(!target) return message.reply(`HIBA! Kérlek adj megy egy embert!`)
+      
+      let arole = message.mentions.roles.first();
+      
+      if(!arole) return message.reply(`HIBA! Kérlek adj megy egy rangot!`)
+      
+      let ticon = target.user.avatarURL({ dynamic: true, size: 2048 });
+      let aicon = message.author.avatarURL({ dynamic: true, size: 2048 });
+      
+        const embed = new Discord.MessageEmbed()
+        
+        .setColor("#ff1800")
+        .setDescription(` ${target.user.username}-nek/nak el lett véve tőle: ${arole} nevű rang! `)
+        
+        await message.channel.send(embed)
+        
+        target.roles.remove(arole)
+    }
     
     
     
