@@ -244,6 +244,10 @@ if(cmd === `${prefix}giveaway`){
         .addField("-report", "Reportol egy embert amit csak az adminok látnak Használat: -report @egyember indok")
         .addField("-cica", "Egy cuki cicál generál")
         .addField("-clear", "clear parancs Használat: -clear (mennyi üzenetet szeretnél törölni)")
+        .addField("-addrole", "")
+        .addField("-removerole", "Egy cuki cicál generál")
+        
+        
     message.channel.send(embed)
     }
     
@@ -381,7 +385,19 @@ if(cmd === `${prefix}giveaway`){
         
     
     
-    
+     if (cmd === `${prefix}floppa`) {
+        const subreddits = ["Floppa"]
+        const random = subreddits[Math.floor(Math.random() * subreddits.length)]
+
+        const IMG = await randomPuppy(random)
+        const MemeEmbed = new Discord.MessageEmbed()
+            .setColor("RANDOM")
+            .setImage(IMG)
+            .setTitle(`Keresési szöveg: ${random} (KATT IDE!)`)
+            .setURL(`https://www.reddit.com/r/${random}`)
+
+        message.channel.send(MemeEmbed)
+    }
     
 
     
