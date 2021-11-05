@@ -370,7 +370,7 @@ if(cmd === `${prefix}giveaway`){
 
             message.channel.send(kickEmbed);
         }
-    }
+    
     
     
     
