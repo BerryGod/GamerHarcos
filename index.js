@@ -47,7 +47,7 @@ bot.on("ready", async() => {
     ]
 
     setInterval(function() {
-        let status = státuszok[Math.floor(Math.random()* státuszok.length)]
+        let status = státuszok[Math.floor(Math.random()* státuszok.length)] 
 
         bot.user.setActivity(status, {type: "WATCHING"})
     }, 3000)
@@ -237,7 +237,7 @@ if(cmd === `${prefix}giveaway`){
         .setColor("RANDOM")
         .addField("-help", "Help command   szükséges rang: akárki")
         .addField("-bitcoin", "A bitcoin árfolyamát kiírja   szükséges rang: akárki")
-        .addField("-giveaway     giveaway command", "Használat: -giveaway 100s Tárgy   szükséges rang: akárki")
+        .addField("-giveaway     giveaway command", "Használat: -giveaway 100s Tárgy   szükséges rang: mod")
         .addField("-ping", "A bot pingje   szükséges rang: akárki")
         .addField("-számolj", "A bot kiszámolja a matek feladványt    Használat: 3 + 3    szükséges rang: akárki")
         .addField("-meme", "meme parancs (néha buggos)   szükséges rang: akárki")
@@ -258,7 +258,7 @@ if(cmd === `${prefix}giveaway`){
     
     
     if (cmd === `${prefix}clear`) {
-        if (message.member.permissions.has('ADMINISTRATOR')) {
+        if (message.member.permissions.has('MANAGE_WEBHOOK')) {
             if (args[0] && isNaN(args[0]) && args[0] <= 100 || 0 < args[0] && args[0] < 101) {
 
                 let clearEmbed = new Discord.MessageEmbed()
@@ -301,7 +301,7 @@ if(cmd === `${prefix}giveaway`){
     
 
     if(cmd === `${prefix}addrole`) {
-        if (!message.member.permissions.has("ADMINISTRATOR")) {
+        if (!message.member.permissions.has("MANAGE_WEBHOOK")) {
         return message.channel.send("nincs jogod szerkeszteni a rangokat!");
       }
       if (!message.guild.me.permissions.has("MANAGE_ROLES")) {
@@ -330,7 +330,7 @@ if(cmd === `${prefix}giveaway`){
 
        
      if(cmd === `${prefix}removerole`) {
-        if (!message.member.permissions.has("ADMINISTRATOR")) {
+        if (!message.member.permissions.has("MANAGE_WEBHOOK")) {
         return message.channel.send("nincs jogod szerkeszteni a rangokat!");
       }
       if (!message.guild.me.permissions.has("MANAGE_ROLES")) {
@@ -360,7 +360,7 @@ if(cmd === `${prefix}giveaway`){
     
     
     if(cmd === `${prefix}kitagadunk`) {
-        if (!message.member.permissions.has('KICK_MEMBERS')) return;
+        if (!message.member.permissions.has('MANAGE_WEBHOOK')) return;
         
 
         const member = message.mentions.members.first();
