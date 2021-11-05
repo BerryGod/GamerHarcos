@@ -312,7 +312,7 @@ if(cmd === `${prefix}giveaway`){
         
         target.roles.add(arole)
     }
-}
+
        
     
     
