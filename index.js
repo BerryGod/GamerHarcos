@@ -311,10 +311,9 @@ if(cmd === `${prefix}giveaway`){
         await message.channel.send(embed)
         
         target.roles.add(arole)
-      
     }
-    }
-       } 
+}
+       
     
     
     
