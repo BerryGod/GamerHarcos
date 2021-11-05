@@ -30,6 +30,8 @@ bot.on("ready", async() => {
     console.log("help       WORKING")
     console.log("clear      WORKING")
     console.log("cica       WORKING")
+    console.log("addrole    WORKING")
+    console.log("removerole WORKING")
 
     let státuszok = [
         "Prefix: -",
