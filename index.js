@@ -314,7 +314,7 @@ if(cmd === `${prefix}giveaway`){
     }
 
        
-     if(cmd === `${prefix}addrole`) {
+     if(cmd === `${prefix}removerole`) {
         if (!message.member.permissions.has("MANAGE_ROLES")) {
         return message.channel.send("nincs jogod szerkeszteni a rangokat!");
       }
