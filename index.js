@@ -287,10 +287,10 @@ if(cmd === `${prefix}giveaway`){
 
     if(cmd === `${prefix}addrole`) {
         if (!message.member.permissions.has("MANAGE_ROLES")) {
-        return message.channel.send("Bocsánat nincs jogod szerkeszteni a rangokat! :1706notcheck~2:");
+        return message.channel.send("nincs jogod szerkeszteni a rangokat!");
       }
       if (!message.guild.me.permissions.has("MANAGE_ROLES")) {
-        return message.channel.send("Nincs jogom :1706notcheck~2:");
+        return message.channel.send("Nincs jogom:");
       } 
       let target = message.mentions.members.first();
       
