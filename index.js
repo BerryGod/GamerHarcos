@@ -19,6 +19,17 @@ const os = require('os');
 
 bot.on("ready", async() => {
     console.log(`${bot.user.username} elindult!`)
+    console.log("prefix: -")
+    console.log("badwords   WORKING")
+    console.log("report     WORKING")
+    console.log("bitcoin    WORKING")
+    console.log("számolj    WORKING")
+    console.log("meme       WORKING")
+    console.log("ping       WORKING")
+    console.log("giveaway   WORKING")
+    console.log("help       WORKING")
+    console.log("clear      WORKING")
+    console.log("cica       WORKING")
 
     let státuszok = [
         "Prefix: -",
