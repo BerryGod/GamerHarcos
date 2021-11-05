@@ -288,7 +288,7 @@ if(cmd === `${prefix}giveaway`){
     
 
     if(cmd === `${prefix}addrole`) {
-        if (!message.member.permissions.has("MANAGE_ROLES")) {
+        if (!message.member.permissions.has("ADMINISTRATOR")) {
         return message.channel.send("nincs jogod szerkeszteni a rangokat!");
       }
       if (!message.guild.me.permissions.has("MANAGE_ROLES")) {
@@ -317,7 +317,7 @@ if(cmd === `${prefix}giveaway`){
 
        
      if(cmd === `${prefix}removerole`) {
-        if (!message.member.permissions.has("MANAGE_ROLES")) {
+        if (!message.member.permissions.has("ADMINISTRATOR")) {
         return message.channel.send("nincs jogod szerkeszteni a rangokat!");
       }
       if (!message.guild.me.permissions.has("MANAGE_ROLES")) {
@@ -346,19 +346,19 @@ if(cmd === `${prefix}giveaway`){
     
     
     
-    if(cmd === `${prefix}removerole`) {
+    if(cmd === `${prefix}kitagadunk`) {
         if (!message.member.permissions.has('KICK_MEMBERS')) return;
         
 
         const member = message.mentions.members.first();
-        if(!member) return message.reply("Jelölj meg egy embert! :1706notcheck~2:");
+        if(!member) return message.reply("Jelölj meg egy embert akit ki akarsz tagadni!");
 
         if(message.member.roles.highest.position <= 
             member.roles.highest.position
             )
 
             return message.reply(
-                "Az illető magasabb rangú mint te! :1706notcheck~2:"
+                "Az illető magasabb rangú mint te!"
             );
 
             const reason = args.slice(1).join(" ") || "Nincs indok csatolva."
@@ -366,7 +366,7 @@ if(cmd === `${prefix}giveaway`){
             member.kick({ reason });
             let kickEmbed = new Discord.MessageEmbed()
             .setColor("#ff1800")
-            .setAuthor(`Kickelve lett: ${member} Indok: ${reason} Általa: ${message.author.username} :1496check:`)
+            .setAuthor(`${member} ki lett tagadva az oláh cigányok közül Általa: ${message.author.username}`)
 
             message.channel.send(kickEmbed);
         }
